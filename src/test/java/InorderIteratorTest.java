@@ -15,14 +15,6 @@ public class InorderIteratorTest {
 
     @Test
     public void inorder_iterates_correctly() {
-        assertEquals(3, iterator.next().value);
-        assertEquals(4, iterator.next().value);
-        assertEquals(5, iterator.next().value);
-        assertEquals(6, iterator.next().value);
-        assertEquals(7, iterator.next().value);
-        assertEquals(8, iterator.next().value);
-        assertEquals(9, iterator.next().value);
-        assertFalse(iterator.hasNext());
     }
 
 }
