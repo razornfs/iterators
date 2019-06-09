@@ -23,7 +23,7 @@ class IteratorUtils {
     }
 
     static void fillBTWithRandomNumbers(BinaryTree bt, int amount) {
-        List<Integer> randomInts = new ArrayList<>();
+        List<Integer> randomInts = new ArrayList<>(amount);
         for (int i = 0; i < amount; i++) {
             randomInts.add(i);
         }
