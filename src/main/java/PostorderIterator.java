@@ -9,8 +9,8 @@ public class PostorderIterator implements Iterator {
         if (root == null) {
             return;
         }
-        while (next.left != null) {
-            next = next.left;
+        while (next.left != null || next.right != null) {
+            next = next.left == null ? next.right : next.left;
         }
     }
 
