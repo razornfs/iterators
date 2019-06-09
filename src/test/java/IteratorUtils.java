@@ -8,7 +8,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
-class RandomIteratorUtils {
+class IteratorUtils {
     static void random_test(BinaryTree bt, Iterator it1, Iterator it2) {
         int loopCount = 0;
 

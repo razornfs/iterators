@@ -44,10 +44,10 @@ public class InorderIteratorTest {
     @Test
     public void random_test() {
         binaryTree = new BinaryTree();
-        RandomIteratorUtils.fillBTWithRandomNumbers(binaryTree, 1000000);
+        IteratorUtils.fillBTWithRandomNumbers(binaryTree, 1000000);
         Iterator inorderIterator = new InorderIterator(binaryTree.root);
         Iterator simpleInorderIterator = new SimpleInorderIterator(binaryTree.root);
-        RandomIteratorUtils.random_test(binaryTree, inorderIterator, simpleInorderIterator);
+        IteratorUtils.random_test(binaryTree, inorderIterator, simpleInorderIterator);
     }
 
 }

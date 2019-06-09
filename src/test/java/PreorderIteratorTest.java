@@ -1,4 +1,3 @@
-import org.junit.Before;
 import org.junit.Test;
 
 import java.util.NoSuchElementException;
@@ -45,9 +44,9 @@ public class PreorderIteratorTest {
     @Test
     public void random_test() {
         BinaryTree bt = new BinaryTree();
-        RandomIteratorUtils.fillBTWithRandomNumbers(bt, 1000000);
+        IteratorUtils.fillBTWithRandomNumbers(bt, 1000000);
         Iterator preorderIterator = new PreorderIterator(bt.root);
         Iterator simplePreorderIterator = new SimplePreorderIterator(bt.root);
-        RandomIteratorUtils.random_test(bt, preorderIterator, simplePreorderIterator);
+        IteratorUtils.random_test(bt, preorderIterator, simplePreorderIterator);
     }
 }

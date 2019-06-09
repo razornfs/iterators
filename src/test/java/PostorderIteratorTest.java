@@ -1,4 +1,3 @@
-import org.junit.Before;
 import org.junit.Test;
 
 import java.util.NoSuchElementException;
@@ -46,9 +45,9 @@ public class PostorderIteratorTest {
     @Test
     public void random_test() {
         BinaryTree bt = new BinaryTree();
-        RandomIteratorUtils.fillBTWithRandomNumbers(bt, 1000000);
+        IteratorUtils.fillBTWithRandomNumbers(bt, 1000000);
         Iterator postorderIterator = new PostorderIterator(bt.root);
         Iterator simplePostorderIterator = new SimplePostorderIterator(bt.root);
-        RandomIteratorUtils.random_test(bt, postorderIterator, simplePostorderIterator);
+        IteratorUtils.random_test(bt, postorderIterator, simplePostorderIterator);
     }
 }
