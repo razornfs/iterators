@@ -1,18 +1,22 @@
+import org.junit.Before;
 import org.junit.Test;
 
-import java.util.*;
+import java.util.NoSuchElementException;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
-public class InorderIteratorTest {
+public class SimpleInorderIteratorTest {
+    private BinaryTree binaryTree = BinaryTree.createBinaryTree();
+    private SimpleInorderIterator iterator = null;
 
-    private BinaryTree binaryTree;
-    private InorderIterator iterator;
+    @Before
+    public void setUp() {
+        iterator = new SimpleInorderIterator(binaryTree.root);
+    }
 
     @Test
     public void inorder_iterates_correctly() {
-        binaryTree = BinaryTree.createBinaryTree();
-        iterator = new InorderIterator(binaryTree.root);
         assertEquals(3, iterator.next().value);
         assertEquals(4, iterator.next().value);
         assertEquals(5, iterator.next().value);
@@ -31,7 +35,7 @@ public class InorderIteratorTest {
         binaryTree.add(7);
         binaryTree.add(55);
         binaryTree.add(-5);
-        iterator = new InorderIterator(binaryTree.root);
+        iterator = new SimpleInorderIterator(binaryTree.root);
 
         assertEquals(-5, iterator.next().value);
         assertEquals(4, iterator.next().value);
@@ -40,14 +44,4 @@ public class InorderIteratorTest {
         assertEquals(55, iterator.next().value);
         iterator.next();
     }
-
-    @Test
-    public void random_test() {
-        binaryTree = new BinaryTree();
-        RandomIteratorUtils.fillBTWithRandomNumbers(binaryTree, 1000000);
-        Iterator inorderIterator = new InorderIterator(binaryTree.root);
-        Iterator simpleInorderIterator = new SimpleInorderIterator(binaryTree.root);
-        RandomIteratorUtils.random_test(binaryTree, inorderIterator, simpleInorderIterator);
-    }
-
 }

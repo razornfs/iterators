@@ -1,6 +1,7 @@
 public class BinaryTree {
 
     Node root;
+    private int size;
 
     public void add(int value) {
         root = addRecursive(root, value);
@@ -12,6 +13,7 @@ public class BinaryTree {
 
     private Node addRecursive(Node current, int value) {
         if (current == null) {
+            size++;
             return new Node(value);
         }
 
@@ -51,8 +53,11 @@ public class BinaryTree {
             return true;
         }
         return value < current.value
-                ? containsNodeRecursive(current.left, value)
-                : containsNodeRecursive(current.right, value);
+               ? containsNodeRecursive(current.left, value)
+               : containsNodeRecursive(current.right, value);
     }
 
+    public int size() {
+        return size;
+    }
 }
